@@ -1,5 +1,6 @@
 <template>
   <div class="singer">
+    <list-view :data="singers"></list-view>
   </div>
 </template>
 
@@ -7,6 +8,7 @@
 import { getSingerList } from 'api/singer'
 import { ERR_OK } from 'api/config'
 import Singer from 'common/js/singer'
+import ListView from 'base/listview/listview'
 
 const HOT_NAME = '热门'
 const HOT_SINGER_LEN = 10
@@ -14,11 +16,12 @@ const HOT_SINGER_LEN = 10
 export default {
   data () {
     return {
-      singer: []
+      singers: []
     }
   },
   components: {
-    getSingerList
+    getSingerList,
+    ListView
   },
   created () {
     this._getSingerList()
@@ -64,7 +67,7 @@ export default {
         let val = map[key]
         if (val.title.match(/[a-zA-z]/)) {
           ret.push(val)
-        } else if (val.title === 'hot') {
+        } else if (val.title === HOT_NAME) {
           hot.push(val)
         }
       }
