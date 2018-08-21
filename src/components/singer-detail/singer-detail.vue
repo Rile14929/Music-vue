@@ -1,7 +1,7 @@
 <template>
   <transition name="slider">
     <div class="singer-detail">
-    123
+
     </div>
   </transition>
 </template>
@@ -24,6 +24,6 @@ export default {
   transition: all 0.3s
 }
 .slider-enter, .slider-leave-to{
-  transform: translate3d(100%,100%,100%)
+  transform: translate3d(100%,100%,0)
 }
 </style>
