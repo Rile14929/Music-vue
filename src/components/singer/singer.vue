@@ -33,6 +33,7 @@ export default {
         path: `/singer/${singer.id}`
       })
       this.setSinger(singer)
+      // this.$store.commit('SET_SINGER', singer)
     },
     _getSingerList () {
       getSingerList().then((res) => {
